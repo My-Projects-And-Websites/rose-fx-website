@@ -1,0 +1,676 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+/* chosen font - Montserrat */
+/* Using SCSS will automatically add in browser compatibility to elements in the generated CSS file */
+/* global setting, no margins and no padding and any overflow on the x-axis cannot be viewed */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header section */
+#header1 {
+  /* customise the main header */
+  height: auto;
+  position: absolute;
+  /* remove this element from normal DOM flow */
+  width: 100%;
+  z-index: 1;
+  /* elevate to the highest layer */
+}
+
+#header1 .inner-container {
+  margin: 0px auto;
+  width: 90%;
+  /* decrease the width from both sides, -5% from both sides */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* make the element flexible and scale depending on the window size, put a space between all child elements and align it to center */
+}
+
+#header1 .inner-container .logo img {
+  width: 25%;
+  /* decrease the width to 25% */
+  padding: 15px 0px;
+  cursor: pointer;
+  /* on hover, transform the cursor to a pointer */
+}
+
+#header1 .inner-container nav .nav-links li {
+  display: inline;
+  /* display all items in one line only */
+  padding: 0px 15px;
+  /* increase left and right paddings */
+  /* apply effects when hovering */
+}
+
+#header1 .inner-container nav .nav-links li a {
+  color: #ffbfc3;
+  text-transform: uppercase;
+  /* convert to uppercase text */
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  /* smooth transition when behaviour of the element changes */
+}
+
+#header1 .inner-container nav .nav-links li a:hover {
+  color: #EA5B6F;
+  font-size: 18px;
+}
+
+#header1 .inner-container .session_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /* configure the direction of how the flexi elements will be displayed */
+}
+
+#header1 .inner-container .session_links .booklinks {
+  padding: 10px;
+  margin: 5px 15px;
+  /* increase spacing in and out */
+  background-color: #ffbfc3;
+  color: #fff;
+  border-radius: 5px;
+  /* remove the sharp edges */
+  -webkit-transition: background-color 0.4s ease-in 0s;
+  transition: background-color 0.4s ease-in 0s;
+  /* smooth change on the background color */
+}
+
+#header1 .inner-container .session_links .booklinks:hover {
+  background-color: #EA5B6F;
+  /* change background color on hover */
+}
+
+#header2 {
+  display: none;
+  /* hide */
+  position: absolute;
+  /* remove this element from normal DOM flow */
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  /* elevate to the highest layer */
+}
+
+#header2 .mobile-container {
+  margin: 0px auto;
+  width: 85%;
+  /* decrease the width from both sides, -7.5% from both sides */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header2 .mobile-container .logo img {
+  width: 25%;
+  padding: 15px 0px;
+  cursor: pointer;
+  /* on hover, transform the cursor to a pointer */
+}
+
+#header2 .mobile-container .hbg-icon {
+  /* hamburger icon */
+  padding: 15px 20px;
+  border: 1px solid #ffbfc3;
+  border-radius: 50px;
+}
+
+#header2 .mobile-container .hbg-icon p {
+  font-size: 18px;
+  color: #EA5B6F;
+}
+
+.navigate {
+  /* navigation tab appears on click */
+  position: absolute;
+  width: 100%;
+  top: -77px;
+  /* starting position */
+  background: #fff;
+  /* white background color */
+  padding: 25px 0px;
+  z-index: 1;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  border-bottom: 3px solid #ffbfc3;
+  /* change color of the bottom border */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigate nav .nav-links {
+  margin: 0;
+  padding: 0;
+}
+
+.navigate nav .nav-links li {
+  display: inline-block;
+  /* display sibling list item elements in one line */
+  font-size: 15px;
+}
+
+.navigate nav .nav-links li a {
+  text-decoration: none;
+  /* remove decoration */
+  text-transform: uppercase;
+  /* uppercase text */
+  color: #b4becb;
+  padding: 0px 20px;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+/* hero content */
+.hero {
+  position: relative;
+  /* encase absolute items */
+  height: auto;
+}
+
+.hero .hero-img img {
+  width: 75vw;
+  /* width is 3/4 of viewport width - responsive unit */
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* fit the image in the sizing to maintain resolution */
+}
+
+.hero .hero-text {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  text-align: right;
+  /* align text to right */
+}
+
+.hero .hero-text h1 {
+  font-size: 72px;
+  /* the only h1 element in the whole website - set it to a high fotn size  */
+  color: #b4becb;
+  text-shadow: 2px 2px 2px #b4becb;
+  /* drop shadow for the text */
+}
+
+.hero .hero-text p {
+  font-size: 18px;
+  color: #ffbfc3;
+  padding-top: 25px;
+}
+
+/* mini about section */
+.mini-about {
+  margin: 50px auto 0px auto;
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* center flex elements with justify-content and align-items */
+}
+
+.mini-about .about-text {
+  text-align: left;
+  margin-right: 100px;
+  height: 350px;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  /* set the width of the element to 50% */
+}
+
+.mini-about .about-text h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #b4becb;
+}
+
+.mini-about .about-text p {
+  line-height: 1.75;
+  /* increase the spacing between lines of the text */
+  margin-bottom: 40px;
+}
+
+.mini-about .about-text a {
+  text-transform: uppercase;
+  color: #ffbfc3;
+  border: 1px solid #ffbfc3;
+  /* create a border of 1px, solid and this color */
+  border-radius: 10px;
+  /* smoother edges */
+  padding: 20px;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.mini-about .about-text a:hover {
+  /* whem hovering, apply these properties */
+  padding: 20px 50px;
+  background-color: #ffbfc3;
+  color: #fff;
+}
+
+.mini-about .about-img {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  /* set to 50% width */
+}
+
+.mini-about .about-img img {
+  border-radius: 45%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mini-contact {
+  margin: 100px auto 0px auto;
+  /* add spacing at the top */
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* turn display to flexible */
+}
+
+.mini-contact .contact-text {
+  text-align: right;
+  /* align text to the right */
+  margin-left: 100px;
+  height: 350px;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  /* this element will take up 60% space of its parent's element width */
+}
+
+.mini-contact .contact-text h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #b4becb;
+}
+
+.mini-contact .contact-text p {
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+.mini-contact .contact-text a {
+  text-transform: uppercase;
+  /* turn text to uppercase */
+  color: #ffbfc3;
+  border: 1px solid #ffbfc3;
+  border-radius: 10px;
+  padding: 20px;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.mini-contact .contact-text a:hover {
+  padding: 20px 50px;
+  background-color: #ffbfc3;
+  color: #fff;
+}
+
+.mini-contact .contact-img {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  /* set to 40% width of the parent's element */
+}
+
+.mini-contact .contact-img img {
+  border-radius: 50%;
+  /* image will be round */
+  width: 100%;
+  height: 55vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mini-booking {
+  /* element only shows if PHP session and username session is active*/
+  margin: 100px auto 0px auto;
+  width: 60%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* flex */
+}
+
+.mini-booking .booking-text {
+  text-align: center;
+  height: 250px;
+}
+
+.mini-booking .booking-text h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #b4becb;
+}
+
+.mini-booking .booking-text p {
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+.mini-booking .booking-text a {
+  text-transform: uppercase;
+  color: #ffbfc3;
+  border: 1px solid #ffbfc3;
+  border-radius: 10px;
+  padding: 20px;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.mini-booking .booking-text a:hover {
+  /* when hovering, anchor tag will show smooth transition and x-padding will expand */
+  padding: 20px 50px;
+  background-color: #ffbfc3;
+  color: #fff;
+}
+
+/* footer content */
+footer {
+  margin-top: 50px;
+  height: auto;
+  background: #000;
+  /* black background for easier text view */
+  padding-bottom: 15px;
+}
+
+footer .inner-footer {
+  margin: 0px auto;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /* put a space between copyright and social media icon */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0px;
+}
+
+footer .inner-footer .copy {
+  color: #fff;
+}
+
+footer .inner-footer .socials {
+  /* social media icons */
+  /* Hover effect for the social media icons */
+}
+
+footer .inner-footer .socials .fa {
+  padding: 20px;
+  font-size: 25px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  color: #c9c9c9;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+footer .inner-footer .socials .fa:hover {
+  color: #fff;
+}
+
+footer .disclaimer {
+  /* white text fill and 90% width */
+  color: #fff;
+  margin: 0px auto;
+  width: 90%;
+}
+
+@media screen and (max-width: 480px) {
+  /* this section onwards is for the mobile responsive view */
+  #header1 {
+    display: none;
+    /* hide main header */
+  }
+  #header2 {
+    display: block;
+    /* show mobile header */
+  }
+  #header2 .mobile-container .hbg-icon p {
+    font-size: 26px;
+    /* change font size of hamburger icon */
+  }
+  .hero {
+    position: relative;
+    height: auto;
+  }
+  .hero .hero-img img {
+    width: 100vw;
+    height: 100vh;
+    /* change height size of the hero image */
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .hero .hero-img::after {
+    /* place a duplicate element afetr the specified element without content and opacity is 0.3 */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* place the element here */
+    background-color: #fff;
+    /* background color */
+    opacity: 0.3;
+    /* this will darken the luminance of the hero image to make text easier to read */
+  }
+  .hero .hero-text {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    text-align: center;
+    width: 80%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    /* set the point of the element to center */
+  }
+  .hero .hero-text h1 {
+    font-size: 54px;
+    /* decrease height */
+    color: #EA5B6F;
+    text-shadow: 2px 2px 2px #ffbfc3;
+  }
+  .hero .hero-text p {
+    display: none;
+    /* hide on mobile view */
+  }
+  .mini-about {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* instead of horizontal view, convert to column view */
+  }
+  .mini-about .about-text {
+    text-align: center;
+    width: 100%;
+    margin-right: 0px;
+    padding-bottom: 50px;
+  }
+  .mini-about .about-text h2 {
+    font-size: 30px;
+    /* change size */
+    margin-bottom: 15px;
+    color: #b4becb;
+  }
+  .mini-about .about-text p {
+    font-size: 14px;
+    /* change font size */
+    line-height: 1.75;
+    margin-bottom: 40px;
+    /* add spacing underneath */
+  }
+  .mini-about .about-img {
+    margin: 20px 0px;
+  }
+  .mini-about .about-img img {
+    border-radius: 45%;
+    /* make the edges of the image smoother */
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    /* maintain image resolution */
+  }
+  .mini-contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* column view */
+    margin: 25px auto 0px auto;
+  }
+  .mini-contact .contact-text {
+    text-align: center;
+    margin-left: 0px;
+    margin-bottom: 25px;
+    /* bottom spacing */
+    min-height: 0;
+    /* set min-height so its height will never go lower depending on the device being used to view the page */
+    padding: 25px 0px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .mini-contact .contact-text h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #b4becb;
+  }
+  .mini-contact .contact-text p {
+    font-size: 14px;
+    line-height: 1.5;
+    /* increase spacing between lines */
+    margin-bottom: 40px;
+  }
+  .mini-contact .contact-img {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    /* change order of elements */
+  }
+  .mini-contact .contact-img img {
+    border-radius: 50%;
+    /* round image */
+    width: 100%;
+    height: 55vh;
+    /* adjust height */
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .mini-booking {
+    height: 325px;
+    margin: 50px auto;
+    width: 75%;
+  }
+  .mini-booking .booking-text {
+    text-align: center;
+    /* center text alignment */
+    height: 325px;
+  }
+  .mini-booking .booking-text h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #b4becb;
+  }
+  .mini-booking .booking-text p {
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 40px;
+  }
+  .mini-booking .booking-text a {
+    text-transform: uppercase;
+    color: #ffbfc3;
+    border: 1px solid #ffbfc3;
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+  footer {
+    margin-top: 50px;
+    /* add spacing above */
+    padding-bottom: 15px;
+  }
+  footer .inner-footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* on mobile view, set direction to column */
+    margin-top: 20px;
+  }
+  footer .disclaimer {
+    text-align: center;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  /* end of mobile responsiveness */
+}
+/*# sourceMappingURL=styles.css.map */

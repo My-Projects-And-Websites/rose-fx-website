@@ -1,0 +1,598 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); /* chosen font - Montserrat */
+
+/* Using SCSS will automatically add in browser compatibility to elements in the generated CSS file */
+/* global setting, no margins and no padding and any overflow on the x-axis cannot be viewed */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header section */
+
+#header1 { /* customise the main header */
+    height: auto;
+    position: absolute; /* remove this element from normal DOM flow */
+    width: 100%;
+    z-index: 1; /* elevate to the highest layer */
+
+    .inner-container {
+        margin: 0px auto;
+        width: 90%; /* decrease the width from both sides, -5% from both sides */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* make the element flexible and scale depending on the window size, put a space between all child elements and align it to center */
+
+        .logo {
+
+            img {
+                width: 25%; /* decrease the width to 25% */
+                padding: 15px 0px;
+                cursor: pointer; /* on hover, transform the cursor to a pointer */
+            }
+        }
+
+        nav .nav-links li {
+            display: inline; /* display all items in one line only */
+            padding: 0px 15px; /* increase left and right paddings */
+
+            a {
+                color: #ffbfc3;
+                text-transform: uppercase; /* convert to uppercase text */
+                transition: all 0.4s ease 0s; /* smooth transition when behaviour of the element changes */
+            }
+
+            a:hover {
+                color: #EA5B6F;
+                font-size: 18px;
+            } /* apply effects when hovering */
+        }
+
+        .session_links {
+            display: flex;
+            flex-direction: row; /* configure the direction of how the flexi elements will be displayed */
+
+            .booklinks {
+                padding: 10px;
+                margin: 5px 15px; /* increase spacing in and out */
+                background-color: #ffbfc3;
+                color: #fff;
+                border-radius: 5px; /* remove the sharp edges */
+                transition: background-color 0.4s ease-in 0s; /* smooth change on the background color */
+            }
+
+            .booklinks:hover {
+                background-color: #EA5B6F; /* change background color on hover */
+            }
+        }
+    }
+}
+
+#header2 {
+    display: none; /* hide */
+    position: absolute; /* remove this element from normal DOM flow */
+    top: 0;
+    width: 100%;
+    z-index: 1; /* elevate to the highest layer */
+
+    .mobile-container {
+        margin: 0px auto;
+        width: 85%; /* decrease the width from both sides, -7.5% from both sides */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+
+            img {
+                width: 25%;
+                padding: 15px 0px;
+                cursor: pointer; /* on hover, transform the cursor to a pointer */
+            }
+        }
+
+        .hbg-icon { /* hamburger icon */
+            padding: 15px 20px;
+            border: 1px solid #ffbfc3;
+            border-radius: 50px;
+
+            p {
+                font-size: 18px;
+                color: #EA5B6F;
+            }
+        }
+    }
+}
+
+.navigate { /* navigation tab appears on click */
+    position: absolute;
+    width: 100%;
+    top: -77px; /* starting position */
+    background: #fff; /* white background color */
+    padding: 25px 0px;
+    z-index: 1;
+    transition: all 0.5s ease 0s;
+    border-bottom: 3px solid #ffbfc3; /* change color of the bottom border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    nav {
+
+        .nav-links {
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline-block; /* display sibling list item elements in one line */
+                font-size: 15px;
+                
+                a {
+                    text-decoration: none; /* remove decoration */
+                    text-transform: uppercase; /* uppercase text */
+                    color: #b4becb;
+                    padding: 0px 20px;
+                    transition: all 0.5s ease 0s;
+                }
+            }
+        }
+    }
+
+    #php-links { /* styling the links echoed by PHP script */
+
+        .session_links {
+            display: flex;
+
+            .booklinks {
+                padding: 10px;
+                margin: 5px 15px;
+                background-color: #ffbfc3;
+                color: #fff;
+                border-radius: 5px;
+                transition: background-color 0.4s ease-in 0s;
+            }
+        }
+    }
+}
+
+/* main contact area/section */
+
+main {
+    background: url('../../images/contact_images/lets_talk_bg.png') no-repeat; /* set this image as a background and do not repeat */
+
+    .contact-us {
+        height: auto; /* height scales depending on its content size */
+
+        .inner-contact {
+            height: 1000px; /* set to 1000px */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px auto;
+            width: 92%;
+            /* flex child elements of 'inner-contact' */
+
+            .lets-talk {
+                flex-basis: 55%; /* this element will take up 55% of the parent element's width */
+                padding: 45px; /* set padding all around */
+
+                h2 {
+                    font-size: 58px; /* set font size */
+                    color: #ffbfc3;
+                }
+
+                p {
+                    font-size: 18px;
+                    color: #fff; /* change colour for luminance */
+                    padding: 5px 0px 15px 0px;
+                    width: 90%;
+                }
+
+                .info {
+
+                    ul {
+                        margin: 0; /* set margin to 0 */
+                        padding: 30px 50px; /* set padding up and down to 30 and left and right to 50 */
+
+                        .info-contact {
+                            display: flex;
+                            align-items: center;
+                            padding-bottom: 20px;
+                            /* set display to flex */
+                            
+                            .contact-icon {
+                                width: 15%; /* decrease the icon size */
+
+                                img {
+                                    padding: 20px;
+                                    width: 100%; /* max width */
+                                    background: #fff;
+                                    border-radius: 50px; /* round edges */
+                                }
+                            }
+                            
+                            /* styling the anchor tag such as the email and address */
+                            a {
+                                margin-left: 10px;
+                                padding: 0px 20px;
+                                color: #fff;
+                                font-size: 20px;
+                                transition: all 0.5s ease 0s;
+                            }
+
+                            /* on hover increase size */
+                            a:hover {
+                                color: #ffbfc3;
+                                font-size: 21px;
+                            }
+                            
+                            /* change paragraph size */
+                            p {
+                                padding: 0px 20px;
+                                margin-left: 10px;
+                                font-size: 20px;
+                            }
+                        }
+
+                        /* last list item child will have a bottom padding of 0px */
+                        .info-contact:last-child {
+                            padding-bottom: 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        /* this elmeent will take up 40% of the parent element's width */
+        .reg-log-form {
+            flex-basis: 40%;
+            padding: 45px;
+            
+            .form-text {
+
+                h3 {
+                    font-size: 30px; /* set font size */
+                    color: #b4becb;
+                }
+
+                p {
+                    margin: 5px 0px;
+                }
+            }
+
+            /* register and login buttons */
+            .reg-log-btn {
+                margin: 40px 0px 20px 0px;
+                display: flex;
+                justify-content: space-between;
+                
+                #regBtn {
+                    transition: color 0.3s ease-in-out 0s, background-color 0.3s ease-in 0s; /* apply transition to these properties */
+                    background-color: rgb(238, 238, 238); /* light grey colour */
+                    cursor: pointer; /* on hover, change cursor */
+                }
+
+                /* apply login button styles*/
+                #logBtn {
+                    transition: all 0.2s ease-in 0s;
+                    background: #fff;
+                    border: 1px solid black;
+                    cursor: pointer;
+                }
+
+                /* on hover, decrease opacity and increase border-radius */
+                #logBtn:hover {
+                    opacity: 0.8;
+                    border-radius: 15px;
+                }
+
+                /* on hover, change colour */
+                #regBtn:hover {
+                    color: #fff;
+                    background-color: #b4becb;
+                }
+
+                /* apply styles to both buttons */
+                button {
+                    border: none;
+                    border-radius: 5px;
+                    padding: 15px 10px;
+                    font-size: 16px;
+                    width: 47%;
+                }
+
+                /* remove outline when button receives focus */
+                button:focus {
+                    outline: 0;
+                }
+            }
+            
+            /* the form that takes in data */
+            form {
+
+                /* remove all borders */
+                .fields {
+                    border: none;
+
+                    .input-type-1 {
+                        position: relative; /* encase absolute elements */
+                        padding-bottom: 10px;
+
+                        input {
+                            width: 100%; /* maximise width */
+                            border-radius: 5px;
+                        }
+
+                        small {
+                            position: absolute; /* freely control positioning of error message */
+                            bottom: 0;
+                            left: 0;
+                            color: red; /* to show it is an error, set color to red */
+                            display: none; /* do not display message until JS says so */
+                        }
+                    }
+
+                    .input-type-2 {
+                        display: flex;
+                        justify-content: space-between;
+                        padding-bottom: 10px;
+                        position: relative;
+                        /* put space between its child elements */
+
+                        input {
+                            /* apply to all input elements */
+                            width: 48.25%;
+                            border-radius: 5px;
+                        }
+
+                        small {
+                            /* place error message at bottom left */
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            color: red;
+                            display: none;
+                        }
+                    }
+
+                    /* attribute selector, i means insensitive letter casing */
+                    input[type="submit" i] {
+                        /* sapply styles to submit button */
+                        background: #ffbfc3;
+                        color: #fff;
+                        border: none;
+                        transition: all 0.3s ease 0s;
+                        cursor: pointer;
+                    }
+
+                    /* on hover decrease opacity */
+                    input[type="submit" i]:hover {
+                        opacity: 0.75;
+                    }
+
+                    /* apply to all inputs */
+                    input {
+                        margin: 10px 0px;
+                        padding: 10px;
+                        font-size: 16px;
+                        border: 1px solid gainsboro;
+                        background: #fff;
+                    }
+
+                    /* remove outline when focusing */
+                    input:focus {
+                        outline: 0;
+                    }
+
+                }
+
+                /* initially remove the login form and only appear on click with a JS function */
+                #fieldset2 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    height: auto;
+    background: #000; /* black background for easier text view */
+    padding-bottom: 15px;
+
+    .inner-footer {
+        margin: 0px auto;
+        width: 90%;
+        display: flex;
+        justify-content: space-between; /* put a space between copyright and social media icon */
+        align-items: center;
+        padding: 15px 0px;
+
+        .copy {
+            color: #fff;
+        }
+        
+        .socials {
+            /* social media icons */
+
+            .fa {
+                padding: 20px;
+                font-size: 25px;
+                width: 60px;
+                text-align: center;
+                text-decoration: none;
+                color: rgb(201, 201, 201);
+                transition: all 0.5s ease 0s;
+            }
+              
+            /* Hover effect for the social media icons */
+            .fa:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    .disclaimer { /* white text fill and 90% width */
+        color: #fff;
+        margin: 0px auto;
+        width: 90%;
+    }
+}
+
+/* apply only to mobile view */
+@media screen and (max-width: 480px) {
+    #header1 {
+        display: none; /* hide main header */
+    }
+
+    #header2 {
+        display: block; /* show mobile header */
+
+        .mobile-container {
+
+            .hbg-icon {
+
+                p {
+                    font-size: 26px; /* change font size of hamburger icon */
+                }
+            }
+        }
+    }
+
+    .navigate {
+        flex-direction: column; /* change direction of flex elements */
+        
+        #php-links {
+
+            .session_links {
+                margin-top: 15px; /* apply spacing above */
+            }
+        }
+    }
+
+    /* main content for the mobile view */
+    main {
+        /* remove background */
+        background: none;
+
+        .contact-us {
+
+            .inner-contact {
+                /* increase height */
+                height: 1500px;
+                flex-direction: column;
+                text-align: center;
+                padding: 125px 0px 50px 0px; /* apply padding above and below */
+                width: 100%;
+                margin-left: 5px;
+
+                .lets-talk {
+                    padding: 0px;
+                    margin: 0px auto;
+                    width: 100%;
+                    flex-basis: 60%; /* increase height of element */
+
+                    /* decrease font size of subheading and paragraph */
+                    h2 {
+                        font-size: 34px;
+                        width: 100%;
+                    }
+
+                    p {
+                        color: #000;
+                        font-size: 16px;
+                    }
+
+                    /* set margin to 0 */
+                    .info {
+                        margin: 0;
+
+                        ul {
+                            margin: 0;
+                            padding: 0;
+    
+                            .info-contact {
+                                display: block;
+                                padding: 30px 0px;
+                                /* remove flex display */
+                                
+                                .contact-icon {
+                                    width: 15%;
+    
+                                    img {
+                                        display: none;
+                                    }
+                                }
+                                
+                                a {
+                                    padding: 0px;
+                                    color: #000;
+                                    font-size: 20px;
+                                    transition: all 0.5s ease 0s;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /* increase the height taken up by this element */
+                .reg-log-form {
+                    flex-basis: 70%;
+                    padding: 45px; /* padding around the element */
+                    
+                    .form-text {
+        
+                        h3 {
+                            font-size: 30px;
+                            color: #b4becb;
+                        }
+        
+                        p {
+                            margin: 5px 0px;
+                        }
+                    }
+        
+                    .reg-log-btn {
+                        /* set margin above and underneath */
+                        margin: 40px 0px 20px 0px;
+                        /* put a space between the child's elements */
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        padding-bottom: 15px;
+    
+        .inner-footer {
+            flex-direction: column; /* on mobile view, set direction to column */
+            margin-top: 20px;
+        }
+    
+        .disclaimer {
+            text-align: center;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* end of mobile responsiveness */
+}

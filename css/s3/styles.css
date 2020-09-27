@@ -1,0 +1,682 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+/* chosen font - Montserrat */
+/* Using SCSS will automatically add in browser compatibility to elements in the generated CSS file */
+/* global setting, no margins and no padding and any overflow on the x-axis cannot be viewed */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header section */
+#header1 {
+  /* customise the main header */
+  height: auto;
+  position: absolute;
+  /* remove this element from normal DOM flow */
+  width: 100%;
+  z-index: 1;
+  /* elevate to the highest layer */
+}
+
+#header1 .inner-container {
+  margin: 0px auto;
+  width: 90%;
+  /* decrease the width from both sides, -5% from both sides */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* make the element flexible and scale depending on the window size, put a space between all child elements and align it to center */
+}
+
+#header1 .inner-container .logo img {
+  width: 25%;
+  /* decrease the width to 25% */
+  padding: 15px 0px;
+  cursor: pointer;
+  /* on hover, transform the cursor to a pointer */
+}
+
+#header1 .inner-container nav .nav-links li {
+  display: inline;
+  /* display all items in one line only */
+  padding: 0px 15px;
+  /* increase left and right paddings */
+  /* apply effects when hovering */
+}
+
+#header1 .inner-container nav .nav-links li a {
+  color: #ffbfc3;
+  text-transform: uppercase;
+  /* convert to uppercase text */
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  /* smooth transition when behaviour of the element changes */
+}
+
+#header1 .inner-container nav .nav-links li a:hover {
+  color: #EA5B6F;
+  font-size: 18px;
+}
+
+#header1 .inner-container .session_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /* configure the direction of how the flexi elements will be displayed */
+}
+
+#header1 .inner-container .session_links .booklinks {
+  padding: 10px;
+  margin: 5px 15px;
+  /* increase spacing in and out */
+  background-color: #ffbfc3;
+  color: #fff;
+  border-radius: 5px;
+  /* remove the sharp edges */
+  -webkit-transition: background-color 0.4s ease-in 0s;
+  transition: background-color 0.4s ease-in 0s;
+  /* smooth change on the background color */
+}
+
+#header1 .inner-container .session_links .booklinks:hover {
+  background-color: #EA5B6F;
+  /* change background color on hover */
+}
+
+#header2 {
+  display: none;
+  /* hide */
+  position: absolute;
+  /* remove this element from normal DOM flow */
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  /* elevate to the highest layer */
+}
+
+#header2 .mobile-container {
+  margin: 0px auto;
+  width: 85%;
+  /* decrease the width from both sides, -7.5% from both sides */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header2 .mobile-container .logo img {
+  width: 25%;
+  padding: 15px 0px;
+  cursor: pointer;
+  /* on hover, transform the cursor to a pointer */
+}
+
+#header2 .mobile-container .hbg-icon {
+  /* hamburger icon */
+  padding: 15px 20px;
+  border: 1px solid #ffbfc3;
+  border-radius: 50px;
+}
+
+#header2 .mobile-container .hbg-icon p {
+  font-size: 18px;
+  color: #EA5B6F;
+}
+
+.navigate {
+  /* navigation tab appears on click */
+  position: absolute;
+  width: 100%;
+  top: -77px;
+  /* starting position */
+  background: #fff;
+  /* white background color */
+  padding: 25px 0px;
+  z-index: 1;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  border-bottom: 3px solid #ffbfc3;
+  /* change color of the bottom border */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigate nav .nav-links {
+  margin: 0;
+  padding: 0;
+}
+
+.navigate nav .nav-links li {
+  display: inline-block;
+  /* display sibling list item elements in one line */
+  font-size: 15px;
+}
+
+.navigate nav .nav-links li a {
+  text-decoration: none;
+  /* remove decoration */
+  text-transform: uppercase;
+  /* uppercase text */
+  color: #b4becb;
+  padding: 0px 20px;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.navigate #php-links {
+  /* styling the links echoed by PHP script */
+}
+
+.navigate #php-links .session_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navigate #php-links .session_links .booklinks {
+  padding: 10px;
+  margin: 5px 15px;
+  background-color: #ffbfc3;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.4s ease-in 0s;
+  transition: background-color 0.4s ease-in 0s;
+}
+
+/* main contact area/section */
+main {
+  background: url("../../images/contact_images/lets_talk_bg.png") no-repeat;
+  /* set this image as a background and do not repeat */
+}
+
+main .contact-us {
+  height: auto;
+  /* height scales depending on its content size */
+  /* this elmeent will take up 40% of the parent element's width */
+}
+
+main .contact-us .inner-contact {
+  height: 1000px;
+  /* set to 1000px */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px auto;
+  width: 92%;
+  /* flex child elements of 'inner-contact' */
+}
+
+main .contact-us .inner-contact .lets-talk {
+  -ms-flex-preferred-size: 55%;
+      flex-basis: 55%;
+  /* this element will take up 55% of the parent element's width */
+  padding: 45px;
+  /* set padding all around */
+}
+
+main .contact-us .inner-contact .lets-talk h2 {
+  font-size: 58px;
+  /* set font size */
+  color: #ffbfc3;
+}
+
+main .contact-us .inner-contact .lets-talk p {
+  font-size: 18px;
+  color: #fff;
+  /* change colour for luminance */
+  padding: 5px 0px 15px 0px;
+  width: 90%;
+}
+
+main .contact-us .inner-contact .lets-talk .info ul {
+  margin: 0;
+  /* set margin to 0 */
+  padding: 30px 50px;
+  /* set padding up and down to 30 and left and right to 50 */
+  /* last list item child will have a bottom padding of 0px */
+}
+
+main .contact-us .inner-contact .lets-talk .info ul .info-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 20px;
+  /* set display to flex */
+  /* styling the anchor tag such as the email and address */
+  /* on hover increase size */
+  /* change paragraph size */
+}
+
+main .contact-us .inner-contact .lets-talk .info ul .info-contact .contact-icon {
+  width: 15%;
+  /* decrease the icon size */
+}
+
+main .contact-us .inner-contact .lets-talk .info ul .info-contact .contact-icon img {
+  padding: 20px;
+  width: 100%;
+  /* max width */
+  background: #fff;
+  border-radius: 50px;
+  /* round edges */
+}
+
+main .contact-us .inner-contact .lets-talk .info ul .info-contact a {
+  margin-left: 10px;
+  padding: 0px 20px;
+  color: #fff;
+  font-size: 20px;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+main .contact-us .inner-contact .lets-talk .info ul .info-contact a:hover {
+  color: #ffbfc3;
+  font-size: 21px;
+}
+
+main .contact-us .inner-contact .lets-talk .info ul .info-contact p {
+  padding: 0px 20px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+main .contact-us .inner-contact .lets-talk .info ul .info-contact:last-child {
+  padding-bottom: 0px;
+}
+
+main .contact-us .reg-log-form {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  padding: 45px;
+  /* register and login buttons */
+  /* the form that takes in data */
+}
+
+main .contact-us .reg-log-form .form-text h3 {
+  font-size: 30px;
+  /* set font size */
+  color: #b4becb;
+}
+
+main .contact-us .reg-log-form .form-text p {
+  margin: 5px 0px;
+}
+
+main .contact-us .reg-log-form .reg-log-btn {
+  margin: 40px 0px 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /* apply login button styles*/
+  /* on hover, decrease opacity and increase border-radius */
+  /* on hover, change colour */
+  /* apply styles to both buttons */
+  /* remove outline when button receives focus */
+}
+
+main .contact-us .reg-log-form .reg-log-btn #regBtn {
+  -webkit-transition: color 0.3s ease-in-out 0s, background-color 0.3s ease-in 0s;
+  transition: color 0.3s ease-in-out 0s, background-color 0.3s ease-in 0s;
+  /* apply transition to these properties */
+  background-color: #eeeeee;
+  /* light grey colour */
+  cursor: pointer;
+  /* on hover, change cursor */
+}
+
+main .contact-us .reg-log-form .reg-log-btn #logBtn {
+  -webkit-transition: all 0.2s ease-in 0s;
+  transition: all 0.2s ease-in 0s;
+  background: #fff;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+main .contact-us .reg-log-form .reg-log-btn #logBtn:hover {
+  opacity: 0.8;
+  border-radius: 15px;
+}
+
+main .contact-us .reg-log-form .reg-log-btn #regBtn:hover {
+  color: #fff;
+  background-color: #b4becb;
+}
+
+main .contact-us .reg-log-form .reg-log-btn button {
+  border: none;
+  border-radius: 5px;
+  padding: 15px 10px;
+  font-size: 16px;
+  width: 47%;
+}
+
+main .contact-us .reg-log-form .reg-log-btn button:focus {
+  outline: 0;
+}
+
+main .contact-us .reg-log-form form {
+  /* remove all borders */
+  /* initially remove the login form and only appear on click with a JS function */
+}
+
+main .contact-us .reg-log-form form .fields {
+  border: none;
+  /* attribute selector, i means insensitive letter casing */
+  /* on hover decrease opacity */
+  /* apply to all inputs */
+  /* remove outline when focusing */
+}
+
+main .contact-us .reg-log-form form .fields .input-type-1 {
+  position: relative;
+  /* encase absolute elements */
+  padding-bottom: 10px;
+}
+
+main .contact-us .reg-log-form form .fields .input-type-1 input {
+  width: 100%;
+  /* maximise width */
+  border-radius: 5px;
+}
+
+main .contact-us .reg-log-form form .fields .input-type-1 small {
+  position: absolute;
+  /* freely control positioning of error message */
+  bottom: 0;
+  left: 0;
+  color: red;
+  /* to show it is an error, set color to red */
+  display: none;
+  /* do not display message until JS says so */
+}
+
+main .contact-us .reg-log-form form .fields .input-type-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 10px;
+  position: relative;
+  /* put space between its child elements */
+}
+
+main .contact-us .reg-log-form form .fields .input-type-2 input {
+  /* apply to all input elements */
+  width: 48.25%;
+  border-radius: 5px;
+}
+
+main .contact-us .reg-log-form form .fields .input-type-2 small {
+  /* place error message at bottom left */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: red;
+  display: none;
+}
+
+main .contact-us .reg-log-form form .fields input[type="submit" i] {
+  /* sapply styles to submit button */
+  background: #ffbfc3;
+  color: #fff;
+  border: none;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+main .contact-us .reg-log-form form .fields input[type="submit" i]:hover {
+  opacity: 0.75;
+}
+
+main .contact-us .reg-log-form form .fields input {
+  margin: 10px 0px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid gainsboro;
+  background: #fff;
+}
+
+main .contact-us .reg-log-form form .fields input:focus {
+  outline: 0;
+}
+
+main .contact-us .reg-log-form form #fieldset2 {
+  display: none;
+}
+
+footer {
+  height: auto;
+  background: #000;
+  /* black background for easier text view */
+  padding-bottom: 15px;
+}
+
+footer .inner-footer {
+  margin: 0px auto;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /* put a space between copyright and social media icon */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0px;
+}
+
+footer .inner-footer .copy {
+  color: #fff;
+}
+
+footer .inner-footer .socials {
+  /* social media icons */
+  /* Hover effect for the social media icons */
+}
+
+footer .inner-footer .socials .fa {
+  padding: 20px;
+  font-size: 25px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  color: #c9c9c9;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+footer .inner-footer .socials .fa:hover {
+  color: #fff;
+}
+
+footer .disclaimer {
+  /* white text fill and 90% width */
+  color: #fff;
+  margin: 0px auto;
+  width: 90%;
+}
+
+/* apply only to mobile view */
+@media screen and (max-width: 480px) {
+  #header1 {
+    display: none;
+    /* hide main header */
+  }
+  #header2 {
+    display: block;
+    /* show mobile header */
+  }
+  #header2 .mobile-container .hbg-icon p {
+    font-size: 26px;
+    /* change font size of hamburger icon */
+  }
+  .navigate {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* change direction of flex elements */
+  }
+  .navigate #php-links .session_links {
+    margin-top: 15px;
+    /* apply spacing above */
+  }
+  /* main content for the mobile view */
+  main {
+    /* remove background */
+    background: none;
+  }
+  main .contact-us .inner-contact {
+    /* increase height */
+    height: 1500px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    padding: 125px 0px 50px 0px;
+    /* apply padding above and below */
+    width: 100%;
+    margin-left: 5px;
+    /* increase the height taken up by this element */
+  }
+  main .contact-us .inner-contact .lets-talk {
+    padding: 0px;
+    margin: 0px auto;
+    width: 100%;
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+    /* increase height of element */
+    /* decrease font size of subheading and paragraph */
+    /* set margin to 0 */
+  }
+  main .contact-us .inner-contact .lets-talk h2 {
+    font-size: 34px;
+    width: 100%;
+  }
+  main .contact-us .inner-contact .lets-talk p {
+    color: #000;
+    font-size: 16px;
+  }
+  main .contact-us .inner-contact .lets-talk .info {
+    margin: 0;
+  }
+  main .contact-us .inner-contact .lets-talk .info ul {
+    margin: 0;
+    padding: 0;
+  }
+  main .contact-us .inner-contact .lets-talk .info ul .info-contact {
+    display: block;
+    padding: 30px 0px;
+    /* remove flex display */
+  }
+  main .contact-us .inner-contact .lets-talk .info ul .info-contact .contact-icon {
+    width: 15%;
+  }
+  main .contact-us .inner-contact .lets-talk .info ul .info-contact .contact-icon img {
+    display: none;
+  }
+  main .contact-us .inner-contact .lets-talk .info ul .info-contact a {
+    padding: 0px;
+    color: #000;
+    font-size: 20px;
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+  main .contact-us .inner-contact .reg-log-form {
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+    padding: 45px;
+    /* padding around the element */
+  }
+  main .contact-us .inner-contact .reg-log-form .form-text h3 {
+    font-size: 30px;
+    color: #b4becb;
+  }
+  main .contact-us .inner-contact .reg-log-form .form-text p {
+    margin: 5px 0px;
+  }
+  main .contact-us .inner-contact .reg-log-form .reg-log-btn {
+    /* set margin above and underneath */
+    margin: 40px 0px 20px 0px;
+    /* put a space between the child's elements */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer {
+    padding-bottom: 15px;
+  }
+  footer .inner-footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* on mobile view, set direction to column */
+    margin-top: 20px;
+  }
+  footer .disclaimer {
+    text-align: center;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  /* end of mobile responsiveness */
+}
+/*# sourceMappingURL=styles.css.map */

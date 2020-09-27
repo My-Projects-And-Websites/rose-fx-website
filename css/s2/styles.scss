@@ -1,0 +1,606 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); /* chosen font - Montserrat */
+
+/* Using SCSS will automatically add in browser compatibility to elements in the generated CSS file */
+/* global setting, no margins and no padding and any overflow on the x-axis cannot be viewed */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header section */
+
+#header1 { /* customise the main header */
+    height: auto;
+    position: absolute; /* remove this element from normal DOM flow */
+    width: 100%;
+    z-index: 1; /* elevate to the highest layer */
+
+    .inner-container {
+        margin: 0px auto;
+        width: 90%; /* decrease the width from both sides, -5% from both sides */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* make the element flexible and scale depending on the window size, put a space between all child elements and align it to center */
+
+        .logo {
+
+            img {
+                width: 25%; /* decrease the width to 25% */
+                padding: 15px 0px;
+                cursor: pointer; /* on hover, transform the cursor to a pointer */
+            }
+        }
+
+        nav .nav-links li {
+            display: inline; /* display all items in one line only */
+            padding: 0px 15px; /* increase left and right paddings */
+
+            a {
+                color: #ffbfc3;
+                text-transform: uppercase; /* convert to uppercase text */
+                transition: all 0.4s ease 0s; /* smooth transition when behaviour of the element changes */
+            }
+
+            a:hover {
+                color: #EA5B6F;
+                font-size: 18px;
+            } /* apply effects when hovering */
+        }
+
+        .session_links {
+            display: flex;
+            flex-direction: row; /* configure the direction of how the flexi elements will be displayed */
+
+            .booklinks {
+                padding: 10px;
+                margin: 5px 15px; /* increase spacing in and out */
+                background-color: #ffbfc3;
+                color: #fff;
+                border-radius: 5px; /* remove the sharp edges */
+                transition: background-color 0.4s ease-in 0s; /* smooth change on the background color */
+            }
+
+            .booklinks:hover {
+                background-color: #EA5B6F; /* change background color on hover */
+            }
+        }
+    }
+}
+
+#header2 {
+    display: none; /* hide */
+    position: absolute; /* remove this element from normal DOM flow */
+    top: 0;
+    width: 100%;
+    z-index: 1; /* elevate to the highest layer */
+
+    .mobile-container {
+        margin: 0px auto;
+        width: 85%; /* decrease the width from both sides, -7.5% from both sides */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+
+            img {
+                width: 25%;
+                padding: 15px 0px;
+                cursor: pointer; /* on hover, transform the cursor to a pointer */
+            }
+        }
+
+        .hbg-icon { /* hamburger icon */
+            padding: 15px 20px;
+            border: 1px solid #ffbfc3;
+            border-radius: 50px;
+
+            p {
+                font-size: 18px;
+                color: #EA5B6F;
+            }
+        }
+    }
+}
+
+.navigate { /* navigation tab appears on click */
+    position: absolute;
+    width: 100%;
+    top: -77px; /* starting position */
+    background: #fff; /* white background color */
+    padding: 25px 0px;
+    z-index: 1;
+    transition: all 0.5s ease 0s;
+    border-bottom: 3px solid #ffbfc3; /* change color of the bottom border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    nav {
+
+        .nav-links {
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline-block; /* display sibling list item elements in one line */
+                font-size: 15px;
+                
+                a {
+                    text-decoration: none; /* remove decoration */
+                    text-transform: uppercase; /* uppercase text */
+                    color: #b4becb;
+                    padding: 0px 20px;
+                    transition: all 0.5s ease 0s;
+                }
+            }
+        }
+    }
+
+    #php-links { /* styling the links echoed by PHP script */
+
+        .session_links {
+            display: flex;
+
+            .booklinks {
+                padding: 10px;
+                margin: 5px 15px;
+                background-color: #ffbfc3;
+                color: #fff;
+                border-radius: 5px;
+                transition: background-color 0.4s ease-in 0s;
+            }
+        }
+    }
+}
+
+/* hero content */
+
+.hero {
+    position: relative; /* encase absolute items */
+    height: auto;
+    
+    .hero-img {
+
+        img {
+            width: 100vw; /* width is 100% of viewport width - responsive unit */
+            height: 90vh;
+            object-fit: cover; /* fit the image in the sizing to maintain resolution */
+        }
+    }
+
+    .hero-text {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+
+        h2 {
+            font-size: 58px;
+            color: #b4becb;
+            text-shadow: 2px 2px 2px #b4becb; /* drop shadow for the text */
+        }
+
+        p {
+            font-size: 20px;
+            color: rgb(82, 82, 82);
+            padding-top: 25px;
+            line-height: 1.5;
+            width: 80%;
+        }
+    }
+}
+
+/* ellipse section */ 
+.step-by-step {
+    margin-top: 80px; /* margin above */
+
+    .ellipses {
+        margin: 0px auto;
+        width: 75%; /* 75% width of the whole screen */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* flexible child elements that scales depending on window size */
+
+        img {
+            padding: 0px 50px;
+            transition: all 0.5s ease 0s;
+            cursor: pointer; /* cursor pointer on hover */
+        }
+
+        img:hover {
+            opacity: 0.8; /* on hover, decrease opacity */
+        }
+    }
+
+    .main-text {
+        text-align: center;
+        padding: 50px 0px;
+        margin: 0px auto;
+        width: 60%;
+
+        h2 {
+            font-size: 36px;
+            color: #000;
+        }
+
+        p {
+            font-size: 18px;
+            padding: 20px 0px;
+            line-height: 1.5;
+        }
+    }
+}
+
+.why-us {
+    /* set a background image for the section (pink columns on the left and right) */
+    background-image: url("../../images/about_images/How_We_Work.png");
+    background-size: contain; /* contain the image in the section */
+
+    .inner-text {
+        margin: 0px auto;
+        width: 65%;
+
+        .why-us-text {
+            padding: 30px 0px 20px 0px; /* specify padding */
+
+            h2 {
+                font-size: 36px;
+                color: #000;
+                padding: 20px 0px;
+            }
+
+            p {
+                color: rgb(0, 0, 0);
+                font-size: 18px;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    /* explanation of Rose FX best features */
+    .why-icons {
+        margin: 0px auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon {
+            width: 100%;
+            padding: 25px 0px;
+
+            img {
+                margin-right: auto;
+                margin-left: auto;
+                width: 35%; /* center image and change width to 35% */
+            }
+
+            h3 {
+                font-size: 24px;
+                padding: 20px 0px 15px 0px;
+                border-bottom: 3px solid black;
+                width: 80%;
+            }
+
+            p {
+                font-size: 18px;
+                padding: 15px 0px;
+                line-height: 1.5;
+                width: 80%;
+            }
+        }
+    }
+}
+
+.slide-contain {
+    max-width: 75%;
+    height: 80vh;
+    position: relative; /* encase absolute elements */
+    margin: 100px auto 10px auto; /* add external spacing */
+    overflow: hidden; /* hide overflowing elements */
+
+    .fade-in {
+        animation-name: fade; /* name of animation */
+        animation-duration: 1.5s; /* duration of animation */
+    }
+
+    .previous, .next-img { /* multiple selector */
+        cursor: pointer;
+        position: absolute; /* buttons are removed from normal flow */
+        top: 50%;
+        width: auto;
+        padding: 25px 35px;
+        transform: translateY(-50%); /* place the center of the buttons in the middle */
+        color: #fff;
+        font-size: 30px; 
+        transition: all 0.4s ease-in-out 0s; /* apply transition effect on all behaviour changes */
+        border-radius: 50px; /* round corners */
+    }
+
+    .previous {
+        left: 3%; /* place to the left */
+    }
+
+    .next-img {
+        right: 3%; /* place to the right */
+    }
+
+    /* on hover, change colour */
+    .previous:hover, .next-img:hover {
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+.space {
+    margin-bottom: 100px; /* add spacing below */
+    text-align: center;
+
+    .dots {
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+        margin: 0 5px;
+        background-color: #a3b2c7;
+        border-radius: 50%;
+        display: inline-block; /* dots will be displayed in one line */
+        transition: background-color 0.6s ease 0s; /* smooth transition on the background color */
+    }
+
+    .dots:hover { /* change bg color on hover */
+        background-color: #b4b4b4;
+    }
+}
+
+@-webkit-keyframes fade { /* browser compatibility fade animation for Safari and Chrome */
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+@keyframes fade { /* fade animation applied to carousel images */
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+footer {
+    height: auto;
+    background: #000; /* black background for easier text view */
+    padding-bottom: 15px;
+
+    .inner-footer {
+        margin: 0px auto;
+        width: 90%;
+        display: flex;
+        justify-content: space-between; /* put a space between copyright and social media icon */
+        align-items: center;
+        padding: 15px 0px;
+
+        .copy {
+            color: #fff;
+        }
+        
+        .socials {
+            /* social media icons */
+
+            .fa {
+                padding: 20px;
+                font-size: 25px;
+                width: 60px;
+                text-align: center;
+                text-decoration: none;
+                color: rgb(201, 201, 201);
+                transition: all 0.5s ease 0s;
+            }
+              
+            /* Hover effect for the social media icons */
+            .fa:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    .disclaimer { /* white text fill and 90% width */
+        color: #fff;
+        margin: 0px auto;
+        width: 90%;
+    }
+}
+
+/* mobile responsiveness view */
+@media screen and (max-width: 480px) { 
+    #header1 {
+        display: none; /* hide main header */
+    }
+
+    #header2 {
+        display: block; /* show mobile header */
+
+        .mobile-container {
+
+            .hbg-icon {
+
+                p {
+                    font-size: 26px; /* change font size of hamburger icon */
+                }
+            }
+        }
+    }
+
+    .navigate {
+        flex-direction: column; /* change direction of flex elements */
+        
+        #php-links {
+
+            .session_links {
+                margin-top: 15px; /* apply spacing above */
+            }
+        }
+    }
+
+    main {
+
+        .hero {
+
+            .hero-img {
+                display: none; /* hide the image  */
+            }
+
+            .hero-text {
+                position: static; /* return to default positioning */
+                text-align: center;
+                margin: 0px auto;
+                width: 85%;
+                padding: 150px 0px 50px 0px; /* apply padding */
+        
+                h2 {
+                    font-size: 28px;
+                }
+        
+                p {
+                    font-size: 14px;
+                    width: 100%;
+                }
+
+                /* change font size for subheading and paragraph */
+            }
+        }
+
+        .step-by-step {
+            margin-top: 20px;
+        
+            .ellipses {
+                margin: 0px auto;
+                width: 100%;
+                display: block; /* display the step by step as a block element */
+                text-align: center;
+        
+                img {
+                    width: 20%; /* change width of images */
+                    padding: 0px 10px;
+                }
+            }
+        
+            .main-text {
+                text-align: center;
+                padding: 30px 0px;
+                margin: 0px auto;
+                width: 80%;
+        
+                h2 {
+                    font-size: 24px;
+                    color: #000;
+                }
+        
+                p {
+                    font-size: 14px;
+                    padding: 20px 0px;
+                    line-height: 1.5;
+                }
+            }
+        }
+
+        .why-us {
+
+            .inner-text {
+                margin: 0px auto;
+                width: 65%; /* remove 17.5% width from both sides */
+                text-align: center;
+        
+                .why-us-text {
+                    padding: 20px 0px;
+        
+                    h2 {
+                        font-size: 24px;
+                        padding: 20px 0px;
+                    }
+        
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        
+            .why-icons {
+                margin: 0px auto;
+                width: 100%; /* maximise width */
+                flex-direction: column; /* change direction of flex elements */
+        
+                .icon {
+                    width: 100%;
+                    padding: 25px 0px;
+        
+                    img {
+                        width: 35%;
+                    }
+        
+                    h3 {
+                        font-size: 20px;
+                        padding: 10px 0px;
+                        width: 100%;
+                    }
+        
+                    p {
+                        font-size: 14px;
+                        padding: 15px 0px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        /* carousel in mobile view */
+        .slide-contain { /* adjust size of container */
+            max-width: 100%;
+            height: 40vh;
+            margin: 50px auto 0px auto;
+        
+            .previous, .next-img { /* remove buttons */
+                display: none;
+            }
+        }
+        
+        .space {
+            margin-bottom: 40px;
+            text-align: center;
+        
+            .dots {
+                margin: 0px 10px;
+            }
+        }
+    }
+
+    footer {
+        margin-top: 50px; /* add spacing above */
+        padding-bottom: 15px;
+    
+        .inner-footer {
+            flex-direction: column; /* on mobile view, set direction to column */
+            margin-top: 20px;
+        }
+    
+        .disclaimer {
+            text-align: center;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* end of mobile responsiveness */
+}
